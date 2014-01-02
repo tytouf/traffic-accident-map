@@ -20,6 +20,5 @@ function initmap() {
   // start the map in Vannes
   map.setView(new L.LatLng(47.66, -2.75), 9);
   map.addLayer(osm);
-
 }
 

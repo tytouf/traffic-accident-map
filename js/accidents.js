@@ -38,11 +38,18 @@ function reqLoadAccidents() {
         dataType: 'json',
         error: function(data) {
                  $('#error').html('Could not load data file.'+lat_max+', '+lng_min);
+                 ajax_requests--;
+                 if (ajax_requests == 0) {
+                   loadAccidents();
+                 }
                },
         success: function(data) {
+                 var a = data['accidents'], i = 0, c = a.length;
+                 for (; i < c; ++i) { accidents.push(a[i]); }
                  ajax_requests--;
-                 accidents.push.apply(accidents, data['accidents']);
-                 loadAccidents();
+                 if (ajax_requests == 0) {
+                   loadAccidents();
+                 }
                }
            });
     }
@@ -50,9 +57,6 @@ function reqLoadAccidents() {
 }
 
 function loadAccidents() {
-  if (ajax_requests != 0) {
-    return;
-  }
   group.clearLayers();
   bounds = map.getBounds();
   n = (new Date()).getTime();

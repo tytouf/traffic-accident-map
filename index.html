@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>Accidents corporels de la circulation en France métropolitaine</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/leafletmap.js"></script>
+<script type="text/javascript" src="js/accidents.js"></script>
+<script>
+$(document).ready(function () {
+  initmap();
+  initAccidents();
+});
+</script>
+</head>
+<body>
+<div class="main">
+<h2>Données</h2>
+<div class="notes">
+<p>Cette carte recense les accidents corporels de la circulation en France métropolitaine. Les données sont issues de ce document : <a href="http://www.data.gouv.fr/donnees/view/Informations-sur-la-localisation-des-accidents-corporels--de-la-circulation-sur-5-ann%C3%A9es---France-M%C3%A9-30379821?xtmc=accidents+corporels+circulation&xtcr=1">Informations sur la localisation des accidents corporels de la circulation sur 5 années - France-Métropolitaine</a></p>
+<p>Légende :
+<ul><li style="color: #f6ff00;"><span>accidents avec blessés légers,</span></li>
+    <li style="color: #ffae00;"><span>accidents avec blessés hospitalisés,</span></li>
+    <li style="color: #ff0000;"><span>accidents mortels.</span></li></ul>
+<p>Attention, seulement les accidents mentionnant la localisation GPS (latitude, longitude), soit 20% seulement des accidents listés dans le document, sont affichés. (J'imagine que ce sont les accidents les plus récents.)</p>
+</div>
+<div id="map" class="map" ></div>
+<div class="text">
+<h2>Implémentation</h2>
+<div class="notes">
+<p>Cette carte est basée sur <a href="http://leaflet.cloudmade.com/">Leaflet</a> et quelques lignes de javascript : <a href="js/accidents.js">accidents.js</a></p>
+<p>Les données issues du fichier .csv de data.gouv.fr ont été divisées en tuiles avec le script <a href="scripts/create_tiles.py">create_tiles.py</a></p>
+<p>Statistique sur le rendu :<span id="stats">aucune</span></p>
+<p id="error"></p>
+</div>
+<h2>Licence</h2>
+<div class="notes">
+<p>Les données issues de data.gouv.fr pour cette page sont sous <a href="http://www.data.gouv.fr/Licence-Ouverte-Open-Licence">License Ouverte</a>.</p>
+Le reste du site est sous licence <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a>
+</div>
+<h2>Contact</h2>
+<div class="notes">
+<p>Si vous avez des questions ou des remarques envoyez un mail à
+christophe.augier@gmail.com</p>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+body, span {
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+  color: #555555;
+}
+
+h2 {
+  font-weight: bold;
+  color: #555555;
+}
+
+.main {
+  width: 75%;
+  margin: auto;
+}
+
+.map {
+  height: 500px;
+}
+
+.text {
+  margin-left: 10px;
+  color: #555555;
+}
+
+.notes {
+  border-left: 3px solid #aaa;
+  padding-left: 10px;
+}
